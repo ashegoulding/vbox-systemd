@@ -31,13 +31,13 @@ do
 	fi
 
 	if [ "$ACT" == "start" ]; then
-		$B_HEADLESS --startvm sandbox
+		$B_HEADLESS --startvm "$SUBJECT"
 	elif [ "$ACT" == "stop" ]; then
-		$B_MANAGE controlvm sandbox savestate
+		$B_MANAGE controlvm "$SUBJECT" savestate
 	elif [ "$ACT" == "reset" ]; then
-		$B_MANAGE controlvm sandbox reset
+		$B_MANAGE controlvm "$SUBJECT" reset
 	elif [ "$ACT" == "kill" ]; then
-		$B_MANAGE controlvm sandbox poweroff
+		$B_MANAGE controlvm "$SUBJECT" poweroff
 	else
 		break
 	fi
