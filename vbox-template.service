@@ -1,10 +1,11 @@
-[Unit]
+Unit]
 Description=@VBOX_DESC@
 Requires=vboxdrv.service
 After=vboxdrv.service
 
 [Service]
 @VBOX_USER_DISABLE@User=@VBOX_USER@
+@VBOX_NICE_DISABLE@Nice=@VBOX_NICE@
 ExecStart=/var/lib/vbox-systemd/vbox-run.sh @VBOX_NAME@ start
 ExecStop=/var/lib/vbox-systemd/vbox-run.sh @VBOX_NAME@ stop
 @VBOX_RESTARTSEC_DISABLE@RestartSec=@RESTART_SEC@
