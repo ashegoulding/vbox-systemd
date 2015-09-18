@@ -2,6 +2,7 @@ Unit]
 Description=@VBOX_DESC@
 Requires=vboxdrv.service
 After=vboxdrv.service
+Before=shutdown.target reboot.target poweroff.target
 
 [Service]
 @VBOX_USER_DISABLE@User=@VBOX_USER@
