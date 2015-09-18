@@ -5,4 +5,5 @@ if [ $UID != 0 ]; then
 fi
 mkdir -p /var/lib/vbox-systemd/
 cp vbox-run.sh /var/lib/vbox-systemd/
+ln -s /var/lib/vbox-systemd/vbox-run.sh /bin
 
