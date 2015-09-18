@@ -5,6 +5,7 @@ After=vboxdrv.service
 Before=shutdown.target reboot.target poweroff.target
 
 [Service]
+KillMode=none
 @VBOX_USER_DISABLE@User=@VBOX_USER@
 @VBOX_NICE_DISABLE@Nice=@VBOX_NICE@
 ExecStart=/var/lib/vbox-systemd/vbox-run.sh @VBOX_NAME@ start
