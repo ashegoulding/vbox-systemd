@@ -1,4 +1,4 @@
-Unit]
+[Unit]
 Description=@VBOX_DESC@
 Requires=vboxdrv.service
 After=vboxdrv.service
