@@ -6,7 +6,11 @@ Before=shutdown.target reboot.target poweroff.target
 
 [Service]
 KillMode=none
+# Set to 0, if the guest is vulnerable to powercut.
+# systemd default is 90s, which can be short when there are several guests.
+TimeoutStopSec=@VBOX_STOPTIMEOUT@
 @VBOX_USER_DISABLE@User=@VBOX_USER@
+# When setting priorities amongst the guests.
 @VBOX_NICE_DISABLE@Nice=@VBOX_NICE@
 ExecStart=/var/lib/vbox-systemd/vbox-run.sh @VBOX_NAME@ start
 ExecStop=/var/lib/vbox-systemd/vbox-run.sh @VBOX_NAME@ stop
